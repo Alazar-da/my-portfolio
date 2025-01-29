@@ -4,6 +4,15 @@ import { faEnvelope,faPhone,faGlobe,faLocationArrow } from '@fortawesome/free-so
 import { faInstagram,faWhatsapp,faLinkedinIn,faGithub,faTelegram } from '@fortawesome/free-brands-svg-icons'
 import send from '../img/Vector.png'
 function Contact() {
+    const [formData,setFromData] = React.useState({
+        name: "",
+        email: "",
+        location:"",
+        budget: "",
+        subject:"",
+        message: ""
+      })
+
     const descriptions={
         icon:[faGlobe,faEnvelope,faPhone],
         header:[
@@ -15,8 +24,53 @@ function Contact() {
             "+251922313333"
         ],
     }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        alert("Submitting form...");
+      
+        const isValid = true; //For validation
+      
+        if (isValid) {
+          try {
+            const formDataObj = new URLSearchParams();
+            formDataObj.append("name", formData.name);
+            formDataObj.append("email", formData.email);
+            formDataObj.append("location", formData.location);
+            formDataObj.append("budget", formData.budget);
+            formDataObj.append("subject", formData.subject);
+            formDataObj.append("message", formData.message);
+      
+            const response = await fetch(
+              'https://my-portfolio-server-gcd6.onrender.com/message/send',
+              {
+                method: "POST",
+                body: formDataObj.toString(),
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+              }
+            );
+      
+            const result = await response.json();
+      
+            if (response.ok) {
+              alert("Message successfully sent: " + result.message);
+            } else {
+              alert("Sending failed: " + result.message);
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to send message. Please try again later.");
+          }
+        }
+      };
+      
+    
+    
+
   return (
-    <section className='flex justify-center items-center py-3 bg-slate-50'>
+    <section className='flex justify-center items-center py-3 bg-slate-50' id='contact'>
         
     <div className='flex md:flex-row flex-col gap-5 lg:w-4/5 md:w-5/6 w-[90%] px-5 py-12 items-center bg-white shadow-lg rounded-lg'>
         <div className='md:w-1/2 w-full flex items-center'>
@@ -60,23 +114,23 @@ function Contact() {
                     <p className='text-gray-400 text-xs md:w-4/5 w-5/6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus arcu, varius eget velit non, laoreet imperdiet orci. Mauris ultrices eget lorem ac vestibulum. Suspendis imperdiet,</p>
                 </div>
 
-                <form className='py-5 flex flex-col gap-5'>
+                <form className='py-5 flex flex-col gap-5' onSubmit={handleSubmit}>
                     <div className='relative'>
-                        <input id="Name" type="text" className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
+                        <input id="Name" type="text" required value={formData.name} onChange={(e)=>setFromData({...formData,name:e.target.value})} className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
                         <label for="Name" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                             Name*
                         </label>
                     </div>
 
                     <div className='relative'>
-                        <input id="Email" type="email" className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
+                        <input id="Email" type="email" required value={formData.email} onChange={(e)=>setFromData({...formData,email:e.target.value})} className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
                         <label for="Email" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                             Email*
                         </label>
                     </div>
 
                     <div className='relative'>
-                        <input id="Location" type="text" className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
+                        <input id="Location" type="text" value={formData.location} onChange={(e)=>setFromData({...formData,location:e.target.value})} className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
                         <label for="Location" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                             Location
                         </label>
@@ -84,14 +138,14 @@ function Contact() {
 
                     <div className='flex flex-row gap-2'>
                     <div className='relative w-1/3'>
-                        <input id=" Budget" type="number" className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
+                        <input id=" Budget" type="number" required value={formData.budget} onChange={(e)=>setFromData({...formData,budget:e.target.value})} className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
                         <label for="Budget" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                             Budget*
                         </label>
                     </div>
                     
                     <div className='relative w-2/3'>
-                        <input id="Subject" type="text" className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
+                        <input id="Subject" type="text" required value={formData.subject} onChange={(e)=>setFromData({...formData,subject:e.target.value})} className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
                         <label for="Subject" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                             Subject*
                         </label>
@@ -99,14 +153,14 @@ function Contact() {
                     </div>
 
                     <div className='relative'>
-                        <textarea id="Message" className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500" placeholder="Your Name" />
+                        <textarea id="Message" required value={formData.message} onChange={(e)=>setFromData({...formData,message:e.target.value})} className="peer h-10 w-full border-b-2 border-gray-100 text-gray-900 placeholder-transparent focus:outline-none focus:border-cyan-500 mt-1" placeholder="Your Name" />
                         <label for="Message" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                             Message*
                         </label>
                     </div>
 
                     <div>
-                        <button type='submit' className='flex gap-2 text-white px-3 py-1.5 bg-cyan-500 rounded-md items-center hover:bg-cyan-700'>Submit {/* <FontAwesomeIcon icon={faLocationArrow} size='' className='pt-1.5'/> */}<img src={send} alt='send' className='h-[16px]'/></button>
+                        <button className='flex gap-2 text-white px-3 py-1.5 bg-cyan-500 rounded-md items-center hover:bg-cyan-700'>Submit {/* <FontAwesomeIcon icon={faLocationArrow} size='' className='pt-1.5'/> */}<img src={send} alt='send' className='h-[16px]'/></button>
                     </div>
                 </form>
                 

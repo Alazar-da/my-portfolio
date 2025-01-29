@@ -14,3 +14,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scroll duration */
+:root {
+  --scroll-duration: 700ms; /* Adjust as desired */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  transition: scroll-behavior var(--scroll-duration) ease-in-out;
+}

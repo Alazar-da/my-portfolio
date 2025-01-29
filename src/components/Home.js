@@ -2,24 +2,26 @@ import React from 'react'
 import pic from '../img/pic1.png'
 function Home() {
     const descriptions={
-        header:["15 Y.","250+","58"],
+        header:["3 Y.","10+","8"],
         subHeader:["Experience","Project Completed","Happy Client"],
     }
   return (
-    <section className='flex justify-center items-center py-3 bg-gradient-to-l from-[#C4F5E9]/70 from-5% h-full'>
+    <section className='flex justify-center items-center py-3 bg-slate-100 h-full' id='home'>
         <div className='flex gap-5 lg:w-4/5 w-5/6 items-center'>
             <div className='flex flex-col gap-12 md:w-1/2 sm:w-4/5 w-full'>
                 <div className='flex flex-col justify-start gap-3'>
-                    <h1 className='text-gray-900 font-semibold lg:text-5xl md:text-4xl text-3xl'>Hello, I'm <span className='block'>Alazar Damena</span></h1>
-                    <p className='text-gray-600 text-sm'>I'm a Freelance UI/UX Designer and Developer based in London, England. I strives to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
-                    <button className='text-white bg-cyan-500 w-[120px] h-[48px] rounded-md '>Say Hello!</button>
+                    <h1 className='font-semibold lg:text-5xl md:text-4xl text-3xl'>Hello, I'm <span className='block'>Alazar Damena</span></h1>
+                    <p className='text-sm'>
+                        I am a Freelance Front-End Developer based in Ethiopia, specializing in building immersive and beautiful web applications through carefully crafted code and user-centric design. My passion is to create dynamic user experiences that engage and inspire, helping businesses thrive online.
+                    </p>
+                    <a className='text-white bg-primary-700 hover:bg-primary-500 w-[120px] h-[48px] rounded-md flex items-center justify-center' href='#contact'>Say Hello!</a>
                 </div>
                 
-                <div className='flex gap-1'>
+                <div className='flex gap-2'>
                     {descriptions.header.map((header, index) => (
-                                <div key={index} className='bg-[#EDD8FF]/50 flex flex-col py-2 items-center w-1/3 gap-0.5'>
-                                    <h2 className='text-gray-700 font-semibold text-2xl'>{header}</h2>
-                                    <p className='text-gray-500 text-xs'>{descriptions.subHeader[index]}</p>
+                                <div key={index} className='bg-slate-600 text-primary-100 flex flex-col py-2 items-center w-1/3 gap-0.5'>
+                                    <h2 className=' font-semibold text-2xl'>{header}</h2>
+                                    <p className=' text-xs'>{descriptions.subHeader[index]}</p>
                                 </div>
                         )
                         )

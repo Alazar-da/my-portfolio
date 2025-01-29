@@ -12,11 +12,11 @@ function App() {
 
   return (
 <>
-  <header className='h-screen overflow-hidden'>
+  <header className='h-screen scroll-smooth transition duration-300 ease-in-out text-slate-900'>
     <Nav />
     <Home />
   </header>
-  <main>
+  <main className='text-slate-900'>
     <About />
     <Process />
     <Portfolio/>
