@@ -1,104 +1,116 @@
-/* import React from 'react'
-
-function Skills() {
-    const descriptions={
-        header:[
-            "Front-End Development",
-            "UI UX Design",
-            "Back-End Development"
-        ],
-        subHeader:[
-            "I'll collaborates with stakeholders or clients to understand the purpose of the app or website. ",
-            "The design phase involves creating the visual and interactive aspects of the app or website. ",
-            "This is where the actual coding begins. The frontend is built to create the user interface, scs",
-        ],
-    }
-  return (
-    <section className='flex justify-center items-center py-12 bg-slate-50 h-full' id='service'>
-    <div className='flex flex-col md:flex-row gap-5 lg:w-4/5 w-5/6 items-center'>
-        <div className='flex flex-col gap-12 md:w-1/2 sm:w-4/5 w-full'>
-            <div className='flex flex-col justify-start gap-3'>
-                <h2 className='text-gray-900 font-semibold lg:text-4xl text-3xl'>What I do?</h2>
-                <p className='text-gray-600 text-sm w-5/6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus arcu, varius eget velit non, laoreet imperdiet orci. Mauris ultrices eget lorem ac vestibulum. Suspendis imperdiet,</p>
-                <p className='text-gray-600 text-sm w-5/6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla purus arcu, varius eget velit non.</p>
-                
-                <button className='text-white bg-primary-600 hover:bg-primary-500 w-[120px] h-[48px] rounded-md'>Say Hello!</button>
-            </div>
-        </div>
-
-        <div className='md:w-1/2 w-full sm:w-4/5 flex flex-col items-center gap-5 justify-start'>
-            
-                    {descriptions.header.map((header, index) => (
-                        <div className='flex justify-center w-5/6 bg-white rounded-md shadow-md hover:shadow-xl hover:transition hover:ease-in-out hover:-translate-y-2 hover:border-l-4 hover:border-secondary-500'>
-                            <div className='flex flex-col gap-4 w-4/5 py-5'>
-                                <div key={index} className='flex flex-col gap-2'>
-                                        <h2 className='text-gray-700 font-semibold text-xl'>{header}</h2>
-                                        <p className='text-gray-500 text-xs'>{descriptions.subHeader[index]}</p>
-                                </div>
-                            </div>
-                        </div>        
-                        )
-                        )
-                    }
-                
-        </div>
-    </div>
-
-</section>
-  )
-}
-
-export default Skills */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "HTML5", level: 90 },
-  { name: "CSS3", level: 85 },
-  { name: "JavaScript", level: 80 },
-  { name: "React", level: 75 },
-  { name: "Next.js", level: 70 },
-  { name: "Tailwind CSS", level: 80 },
-  { name: "TypeScript", level: 70 },
-  { name: "GraphQL", level: 65 },
-];
+  { name: "HTML5/CSS3", level: 90, description: "Proficient in creating responsive and modern web designs using HTML5 and CSS3." },
+  { name: "JavaScript", level: 80, description: "Strong understanding of JavaScript fundamentals and ES6+ features." },
+  { name: "React", level: 80, description: "Expertise in building dynamic and interactive user interfaces using React." },
+  { name: "Next.js", level: 70, description: "Familiar with server-side rendering and static site generation using Next.js." },
+  { name: "Tailwind CSS", level: 85, description: "Skilled in utility-first CSS frameworks like Tailwind CSS for rapid development." },
+  { name: "Bootstrap", level: 80, description: "Proficient in using Bootstrap for creating responsive and mobile-first websites." },
+  { name: "TypeScript", level: 70, description: "Experience in adding type safety to JavaScript projects using TypeScript." },
+  { name: "Redux", level: 70, description: "Experience in state management using Redux in React applications." },
+  { name: "RESTful API", level: 85, description: "Skilled in designing and consuming RESTful APIs for backend communication." },
+  { name: "GraphQL", level: 65, description: "Familiar with querying data using GraphQL and integrating it with frontend applications." },
+  { name: "MERN", level: 70, description: "Proficient in building full-stack applications using the MERN stack (MongoDB, Express.js, React, Node.js)." },
+  { name: "Git", level: 80, description: "Skilled in version control using Git for collaborative and efficient project management." },
+];const Skills = () => {
+  const [expandedSkill, setExpandedSkill] = useState(null);
+  const [showAllSkills, setShowAllSkills] = useState(false);
 
-const Skills = () => {
-  const progressColors = [
-    "bg-primary-600", "bg-secondary-600", "bg-primary-500", "bg-secondary-500",
-    "bg-primary-400", "bg-secondary-400", "bg-primary-300", "bg-secondary-300"
-  ];
+  // Initialize theme state with system preference or localStorage
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light");
+  });
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  // Update the theme and localStorage when theme changes
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleReadMore = (index) => {
+    if (expandedSkill === index) {
+      setExpandedSkill(null); // Collapse if already expanded
+    } else {
+      setExpandedSkill(index); // Expand the clicked skill
+    }
+  };
+
+  const toggleShowAllSkills = () => {
+    setShowAllSkills((prev) => !prev); // Toggle between showing all skills and only the top 6
+  };
+
+  const getColorIntensity = (level) => {
+    if (level >= 90) return "bg-secondary-900"; // Darkest
+    if (level >= 80) return "bg-secondary-700";
+    if (level >= 70) return "bg-secondary-500";
+    if (level >= 60) return "bg-secondary-300";
+    return "bg-secondary-100"; // Lightest
+  };
+
+  // Determine which skills to display based on screen size and "Load More" state
+  const displayedSkills = showAllSkills ? skills : skills.slice(0, 6);
 
   return (
-    <section className="bg-white py-12 px-6 md:px-16">
+    <section className="bg-white dark:bg-slate-800 py-12 px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 dark:text-white">
           My Skills
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+          {displayedSkills.map((skill, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="p-6 bg-slate-100 rounded-2xl shadow-lg hover:bg-slate-300 transition duration-300"
+              className="p-6 bg-primary-100 dark:bg-slate-700 rounded-2xl shadow-lg"
             >
-              <h3 className="text-xl font-semibold mb-4">{skill.name}</h3>
-              <div className="w-full bg-gray-200 rounded-full h-4">
+              <h3 className="text-xl font-semibold mb-4 dark:text-white">{skill.name}</h3>
+              <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-4">
                 <div
-                  className={`h-4 rounded-full ${progressColors[index % progressColors.length]}`}
+                  className={`h-4 rounded-full ${getColorIntensity(skill.level)}`}
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
-              <p className="text-right mt-2 text-secondary-800 font-medium">
+              <p className="text-right mt-2 text-secondary-800 dark:text-secondary-400 font-medium">
                 {skill.level}%
               </p>
+              {expandedSkill === index ? (
+                <p className="mt-4 text-sm text-gray-600 dark:text-slate-300">{skill.description}</p>
+              ) : null}
+              <button
+                onClick={() => toggleReadMore(index)}
+                className="mt-4 text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-600 font-medium"
+              >
+                {expandedSkill === index ? "Read Less..." : "Read More..."}
+              </button>
             </motion.div>
           ))}
         </div>
+        {/* "Load More" or "Show Less" Button */}
+        {skills.length > 6 && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={toggleShowAllSkills}
+              className="px-6 py-2 bg-primary-600 dark:bg-primary-700 text-white rounded-md hover:bg-primary-700 dark:hover:bg-primary-600 transition duration-300"
+            >
+              {showAllSkills ? "Show Less" : "Load More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
 export default Skills;
-
