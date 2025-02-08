@@ -152,12 +152,12 @@ function Contact() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="peer h-10 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                  className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                   placeholder="Your Name"
                 />
                 <label
                   htmlFor="Name"
-                  className="absolute left-1 -top-4.5 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
+                  className="absolute left-1 -top-3 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
                 >
                   Name*
                 </label>
@@ -170,12 +170,12 @@ function Contact() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="peer h-10 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                  className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                   placeholder="Your Email"
                 />
                 <label
                   htmlFor="Email"
-                  className="absolute left-1 -top-4.5 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
+                  className="absolute left-1 -top-3 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
                 >
                   Email*
                 </label>
@@ -187,12 +187,12 @@ function Contact() {
                   type="text"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="peer h-10 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                  className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                   placeholder="Your Location"
                 />
                 <label
                   htmlFor="Location"
-                  className="absolute left-1 -top-4.5 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
+                  className="absolute left-1 -top-3 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
                 >
                   Location
                 </label>
@@ -206,12 +206,12 @@ function Contact() {
                     required
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="peer h-10 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                    className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                     placeholder="Your Budget"
                   />
                   <label
                     htmlFor="Budget"
-                    className="absolute left-1 -top-4.5 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
+                    className="absolute left-1 -top-3 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
                   >
                     Budget*
                   </label>
@@ -224,12 +224,12 @@ function Contact() {
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="peer h-10 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                    className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                     placeholder="Your Subject"
                   />
                   <label
                     htmlFor="Subject"
-                    className="absolute left-1 -top-4.5 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
+                    className="absolute left-1 -top-3 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
                   >
                     Subject*
                   </label>
@@ -242,12 +242,12 @@ function Contact() {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="peer h-20 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400 mt-1"
+                  className="peer h-20 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400 mt-1"
                   placeholder="Your Message"
                 />
                 <label
                   htmlFor="Message"
-                  className="absolute left-1 -top-4.5 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
+                  className="absolute left-1 -top-3 text-gray-600 dark:text-slate-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 dark:peer-focus:text-slate-300 peer-focus:text-sm"
                 >
                   Message*
                 </label>
