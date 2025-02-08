@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faWhatsapp, faLinkedinIn, faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import send from '../img/Vector.png';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -51,8 +53,6 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Submitting form...");
-
     const isValid = true; // For validation
 
     if (isValid) {
@@ -79,19 +79,31 @@ function Contact() {
         const result = await response.json();
 
         if (response.ok) {
-          alert("Message successfully sent: " + result.message);
+          toast.success("Message successfully sent!", {
+            position: "top-right",
+            autoClose: 3000, // Closes after 3 seconds
+          });
+          console.log("Message successfully sent: " + result.message);
         } else {
-          alert("Sending failed: " + result.message);
+          toast.error("Sending failed!", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+          console.log("Sending failed: " + result.message);
         }
       } catch (error) {
         console.error("Error:", error);
-        alert("Failed to send message. Please try again later.");
+        toast.error("Sending failed!", {
+          position: "top-right",
+          autoClose: 3000,
+        });
       }
     }
   };
 
   return (
     <section className='flex justify-center items-center py-3 bg-slate-100 dark:bg-slate-800 pb-10' id='contact'>
+      <ToastContainer />
       <div className='flex md:flex-row flex-col gap-5 lg:w-4/5 md:w-5/6 w-[90%] px-5 py-12 items-center bg-white dark:bg-slate-700 shadow-lg rounded-lg'>
         {/* Left Section */}
         <div className='md:w-1/2 w-full flex items-center'>
@@ -152,7 +164,7 @@ function Contact() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                  className="peer h-10 pl-2 w-full border-b-2 dark:text-slate-200 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                   placeholder="Your Name"
                 />
                 <label
@@ -170,7 +182,7 @@ function Contact() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                  className="peer h-10 pl-2 w-full border-b-2 dark:text-slate-200 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                   placeholder="Your Email"
                 />
                 <label
@@ -187,7 +199,7 @@ function Contact() {
                   type="text"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                  className="peer h-10 pl-2 w-full border-b-2 dark:text-slate-200 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                   placeholder="Your Location"
                 />
                 <label
@@ -206,7 +218,7 @@ function Contact() {
                     required
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                    className="peer h-10 pl-2 w-full border-b-2 dark:text-slate-200 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                     placeholder="Your Budget"
                   />
                   <label
@@ -224,7 +236,7 @@ function Contact() {
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="peer h-10 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
+                    className="peer h-10 pl-2 w-full border-b-2 dark:text-slate-200 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400"
                     placeholder="Your Subject"
                   />
                   <label
@@ -242,7 +254,7 @@ function Contact() {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="peer h-20 pl-2 w-full border-b-2 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400 mt-1"
+                  className="peer h-20 pl-2 w-full border-b-2 dark:text-slate-200 border-gray-100 dark:border-slate-600 bg-primary-100 dark:bg-slate-600 placeholder-transparent focus:outline-none focus:border-primary-500 dark:focus:border-primary-400 mt-1"
                   placeholder="Your Message"
                 />
                 <label
