@@ -33,12 +33,12 @@ function About() {
           <div className='md:w-2/3 w-3/4 sm:w-1/2 flex justify-center bg-gray-50 dark:bg-slate-600 rounded-lg h-5/6 relative'>
             <img src={pic} alt='pic' className='rounded-lg' />
             <div className='absolute -bottom-5 w-4/5 bg-white dark:bg-slate-800 rounded-md flex h-[48px] shadow-lg'>
-              <div className='flex justify-around w-full'>
-                <button><FontAwesomeIcon icon={faInstagram} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></button>
-                <button><FontAwesomeIcon icon={faWhatsapp} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></button>
-                <button><FontAwesomeIcon icon={faLinkedinIn} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></button>
-                <button><FontAwesomeIcon icon={faGithub} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></button>
-                <button><FontAwesomeIcon icon={faTelegram} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></button>
+              <div className='flex justify-around w-full items-center'>
+                <a href='https://www.instagram.com/Alazar_da/' target='_blank'><FontAwesomeIcon icon={faInstagram} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></a>
+                <a href='https://wa.me/+251922313333' target='_blank'><FontAwesomeIcon icon={faWhatsapp} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></a>
+                <a href='https://www.linkedin.com/in/alazar-da' target='_blank'><FontAwesomeIcon icon={faLinkedinIn} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></a>
+                <a href='https://github.com/Alazar-da' target='_blank'><FontAwesomeIcon  icon={faGithub} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></a>
+                <a href='https://t.me/Alazar_da' target='_blank'><FontAwesomeIcon icon={faTelegram} size='lg' className='text-primary-500 hover:text-white hover:bg-primary-500 p-1.5 rounded-md' /></a>
               </div>
             </div>
           </div>

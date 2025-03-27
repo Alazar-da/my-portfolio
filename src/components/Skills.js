@@ -6,15 +6,18 @@ const skills = [
   { name: "JavaScript", level: 80, description: "Strong understanding of JavaScript fundamentals and ES6+ features." },
   { name: "React", level: 80, description: "Expertise in building dynamic and interactive user interfaces using React." },
   { name: "Next.js", level: 70, description: "Familiar with server-side rendering and static site generation using Next.js." },
-  { name: "Tailwind CSS", level: 85, description: "Skilled in utility-first CSS frameworks like Tailwind CSS for rapid development." },
-  { name: "Bootstrap", level: 80, description: "Proficient in using Bootstrap for creating responsive and mobile-first websites." },
+  { name: "Tailwind CSS/Bootstrap", level: 85, description: "Skilled in utility-first and component-based CSS frameworks like Tailwind CSS and Bootstrap for rapid, responsive UI development." },
   { name: "TypeScript", level: 70, description: "Experience in adding type safety to JavaScript projects using TypeScript." },
   { name: "Redux", level: 70, description: "Experience in state management using Redux in React applications." },
   { name: "RESTful API", level: 85, description: "Skilled in designing and consuming RESTful APIs for backend communication." },
   { name: "GraphQL", level: 65, description: "Familiar with querying data using GraphQL and integrating it with frontend applications." },
   { name: "MERN", level: 70, description: "Proficient in building full-stack applications using the MERN stack (MongoDB, Express.js, React, Node.js)." },
   { name: "Git", level: 80, description: "Skilled in version control using Git for collaborative and efficient project management." },
-];const Skills = () => {
+  { name: "Testing/DevOps", level: 70, description: "Experience with automated testing, CI/CD pipelines, and deployment strategies to ensure software reliability and efficiency." }
+];
+
+/* { name: "", level: 80, description: "Proficient in using Bootstrap for creating responsive and mobile-first websites." }, */
+const Skills = () => {
   const [expandedSkill, setExpandedSkill] = useState(null);
   const [showAllSkills, setShowAllSkills] = useState(false);
 
