@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { FiSearch, FiChevronDown, FiPlus, FiMinus } from 'react-icons/fi';
+import { FiSearch, FiPlus, FiMinus } from 'react-icons/fi';
 
 interface Skill {
   name: string;
