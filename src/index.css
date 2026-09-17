@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: font smoothing + base tweaks */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --toast-bg: #ffffff;
+  --toast-fg: #121212;
+}
+
+.dark {
+  --toast-bg: #191919;
+  --toast-fg: #e5e5e5;
+}
