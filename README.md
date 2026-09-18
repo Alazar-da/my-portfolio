@@ -1,60 +1,96 @@
-```markdown
+````
 # Alazar Damena — Portfolio
 
-> Personal portfolio website for **Alazar Damena**, Full Stack Software Engineer based in Addis Ababa, Ethiopia.
+> Personal portfolio website for **Alazar Damena Girma**, a Full Stack Software Engineer based in Addis Ababa, Ethiopia.
 
-A production-grade portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion — featuring a dark/light theme system, animated sections, filtering skills showcase, and a working contact form backed by a serverless function.
+A modern, responsive portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion. The site showcases my skills, selected projects, services, development process, and provides a working contact form.
 
-**🔗 Live:** [alazarda-portfolio.vercel.app](https://alazarda-portfolio.vercel.app/)
+**🌐 Live Portfolio:** [alazarda-portfolio.vercel.app](https://alazarda-portfolio.vercel.app/)
 
 ---
 
 ## ✨ Features
 
-- 🎨 **Dark / Light mode** — system-preference aware, persisted to `localStorage`, controlled via React Context
-- 🎬 **Framer Motion animations** — staggered reveals, scroll-triggered entrances, hover micro-interactions
-- 🧩 **Modular section architecture** — Hero, About, Process, Skills, Portfolio, Services, Contact, Footer
-- 🔍 **Filterable skills grid** — category pills with a sliding active indicator, search, and expandable cards
-- 📊 **Real project showcase** — AMANAH, Power Bet, and Task Management System with tags and links
-- 📬 **Working contact form** — Vercel serverless function + Resend for transactional email
-- 📱 **Fully responsive** — mobile-first, tested from 320px to ultrawide
-- ♿ **Accessible** — semantic HTML, keyboard-navigable, `aria-label`s on icon-only buttons
-- 🚀 **Optimized** — Vite build, font preloading, SVG favicon, meta tags for SEO and social sharing
+- 🌓 **Dark / Light Mode** — system preference detection with persistent theme settings
+- 🎬 **Smooth Animations** — scroll-triggered reveals, staggered animations, and hover interactions
+- 🧩 **Modular Architecture** — reusable sections and components for easy maintenance
+- 🔍 **Filterable Skills** — search and category-based skill filtering with expandable cards
+- 💼 **Project Showcase** — selected projects with technologies, descriptions, and links
+- 📬 **Contact Form** — serverless API endpoint with Resend email delivery
+- 📱 **Responsive Design** — optimized for mobile, tablet, desktop, and ultrawide screens
+- ♿ **Accessible UI** — semantic HTML, keyboard navigation, ARIA labels, and accessible controls
+- 🚀 **Performance & SEO** — Vite production build, optimized assets, metadata, and social sharing support
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend**
-- [React 19](https://react.dev/) — UI library
-- [TypeScript](https://www.typescriptlang.org/) — type-safe JavaScript
-- [Vite](https://vitejs.dev/) — build tool & dev server
-- [Tailwind CSS 3](https://tailwindcss.com/) — utility-first styling
-- [Framer Motion](https://www.framer.com/motion/) — animations
-- [react-icons](https://react-icons.github.io/react-icons/) — icon library (Feather + Font Awesome 6 sets)
+### Frontend
 
-**Backend**
-- [Vercel Serverless Functions](https://vercel.com/docs/functions) — API endpoint for the contact form
-- [Resend](https://resend.com/) — transactional email delivery
+- **React 19** — UI library
+- **TypeScript** — type-safe JavaScript
+- **Vite** — build tool and development server
+- **Tailwind CSS 3** — utility-first CSS framework
+- **Framer Motion** — animations and transitions
+- **React Icons** — icon library
 
-**Tooling**
-- ESLint + Oxlint — linting
-- TypeScript strict mode
-- PostCSS + Autoprefixer
+### Backend & Services
+
+- **Vercel Serverless Functions** — contact form API
+- **Resend** — transactional email delivery
+
+### Tooling
+
+- **ESLint + Oxlint** — code quality and linting
+- **TypeScript Strict Mode** — safer type checking
+- **PostCSS + Autoprefixer** — CSS processing
+
+---
+
+## 📸 Sections
+
+The portfolio is organized into the following sections:
+
+- **Hero** — introduction and primary calls to action
+- **About** — professional background and experience
+- **Process** — approach to building software and working with clients
+- **Skills** — searchable and filterable technical skills
+- **Portfolio** — selected projects and case studies
+- **Services** — software development services
+- **Contact** — contact form and direct communication links
+- **Footer** — social profiles and additional navigation
+
+---
+
+## 💼 Featured Projects
+
+### AMANAH
+
+A featured software project demonstrating full-stack application development, responsive UI implementation, and modern web technologies.
+
+### Power Bet
+
+A web application project focused on building an interactive and responsive user experience.
+
+### Task Management System
+
+A task management application demonstrating CRUD operations, application state management, and full-stack development concepts.
+
+> Project details and live links are available on the [portfolio website](https://alazarda-portfolio.vercel.app/).
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 my-portfolio/
 ├── api/
-│   └── send.js                 # Vercel serverless function (contact form)
+│   └── send.js                 # Vercel serverless contact endpoint
 ├── public/
-│   ├── favicon.svg             # "A" logo favicon
-│   ├── og-image.png            # OpenGraph / Twitter card image
-│   ├── manifest.json           # PWA manifest
-│   └── Alazar_Damena_CV.pdf    # Downloadable CV
+│   ├── favicon.svg
+│   ├── og-image.png
+│   ├── manifest.json
+│   └── Alazar_Damena_CV.pdf
 ├── src/
 │   ├── components/
 │   │   ├── Nav.tsx
@@ -67,8 +103,8 @@ my-portfolio/
 │   │   ├── Contact.tsx
 │   │   └── Footer.tsx
 │   ├── context/
-│   │   └── ThemeContext.tsx    # Dark/light mode provider
-│   ├── img/                    # Project screenshots + portrait
+│   │   └── ThemeContext.tsx
+│   ├── img/
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
@@ -80,198 +116,184 @@ my-portfolio/
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── vite.config.ts
-```
+````
 
 ---
 
-## 🚀 Getting Started
+ ## 🚀 Getting Started
 
-### Prerequisites
+ ### Prerequisites
 
-- Node.js 18+ and npm
-- (Optional) [Vercel CLI](https://vercel.com/docs/cli) for running the serverless function locally
+ - Node.js 18+
+- npm
+- Vercel CLI (optional, required for running serverless functions locally)
 
-### Installation
+ ### Installation
 
-```bash
-# Clone the repo
+```
 git clone https://github.com/Alazar-da/my-portfolio.git
 cd my-portfolio
-
-# Install dependencies
 npm install
 ```
 
-### Environment variables
+ ### Environment Variables
 
-Create a `.env` file at the project root:
+ Create a `.env` file in the project root:
 
-```env
+```
 RESEND_API_KEY=re_your_resend_api_key
 CONTACT_EMAIL=your_email@example.com
 ```
 
-Get a Resend API key at [resend.com/api-keys](https://resend.com/api-keys).
+ You can use `.env.example` as a template.
 
-Copy `.env.example` as a starting template if it exists.
+ > **Never commit your `.env` file or API keys to Git.**
 
-### Run the dev server
+ ### Run the Development Server
 
-**Standard dev** (frontend only — contact form won't work):
+ For frontend development:
 
-```bash
+```
 npm run dev
 ```
 
-**Full dev** (frontend + serverless functions):
+ For the complete application, including the serverless contact endpoint:
 
-```bash
-npm i -g vercel
+```
+npm install -g vercel
 vercel dev
 ```
 
-### Build for production
+ ### Build for Production
 
-```bash
+```
 npm run build
 npm run preview
 ```
 
 ---
 
-## 📜 Available Scripts
+ ## 📜 Available Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start Vite dev server (frontend only) |
-| `npm run build` | Type-check + build for production |
-| `npm run preview` | Preview the production build locally |
+ | Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Type-check and build for production |
+| `npm run preview` | Preview the production build |
 | `npm run lint` | Run Oxlint |
-| `vercel dev` | Run frontend + serverless functions together |
+| `vercel dev` | Run the frontend and serverless functions locally |
 
 ---
 
-## 📬 Contact Form Setup
+ ## 📬 Contact Form
 
-The contact form posts to `/api/send`, a Vercel serverless function that delivers email via Resend.
+ The contact form submits requests to:
 
-**Required environment variables:**
+```
+POST /api/send
+```
 
-| Variable | Description |
-|---|---|
-| `RESEND_API_KEY` | Your Resend API key (`re_...`) |
-| `CONTACT_EMAIL` | Where form submissions should be delivered |
+ The Vercel serverless function uses Resend to deliver submissions to the configured email address.
 
-**Local setup:** add both to `.env`, then run `vercel dev`.
+ ### Required Environment Variables
 
-**Vercel setup:** add both under **Settings → Environment Variables**, then redeploy.
+ | Variable | Description |
+| --- | --- |
+| `RESEND_API_KEY` | Resend API key |
+| `CONTACT_EMAIL` | Email address that receives submissions |
 
-> **Important:** `.env` is gitignored. Never commit it. If a key is ever leaked, revoke it immediately at [resend.com/api-keys](https://resend.com/api-keys) and rotate.
+### Vercel Deployment
+
+ Add the environment variables under:
+
+ **Vercel → Project Settings → Environment Variables**
+
+ Then redeploy the project.
+
+ If an API key is accidentally exposed, revoke it immediately and generate a new one.
 
 ---
 
-## 🎨 Design System
+ ## 🎨 Design System
 
-Custom Tailwind palette defined in `tailwind.config.ts`:
+ The project uses a custom Tailwind CSS color palette:
 
-| Palette | Purpose | Base |
-|---|---|---|
-| `primary` | Brand blue, CTAs, links | `#0047ab` |
-| `secondary` | Accent gold, highlights | `#efbf04` |
-| `third` | Neutral scale (bg + text) | `#252525` |
+ | Palette | Purpose | Base |
+| --- | --- | --- |
+| `primary` | Brand color, links, and CTAs | `#0047ab` |
+| `secondary` | Accent and highlights | `#efbf04` |
+| `third` | Neutral background and text scale | `#252525` |
 
-Dark mode is toggled via the `dark` class on `<html>`, controlled by `ThemeContext`. All components use paired Tailwind classes:
+Dark mode is controlled by React Context and the `dark` class on the `<html>` element.
 
-```tsx
-className="bg-third-100 text-third-900 dark:bg-third-900 dark:text-third-100"
+ Example:
+
+```
+className="
+  bg-third-100
+  text-third-900
+  dark:bg-third-900
+  dark:text-third-100
+"
 ```
 
 ---
 
-## 👤 Author
+ ## 🧠 What I Learned
 
-**Alazar Damena Girma**
-Full Stack Software Engineer — Addis Ababa, Ethiopia
+ Building this portfolio helped me strengthen my understanding of:
 
-- 🌐 Portfolio: [alazarda-portfolio.vercel.app](https://alazarda-portfolio.vercel.app/)
-- 💼 LinkedIn: [linkedin.com/in/alazar-da](https://www.linkedin.com/in/alazar-da)
-- 🐙 GitHub: [github.com/Alazar-da](https://github.com/Alazar-da)
-- 📧 Email: [alazar.damena01@gmail.com](mailto:alazar.damena01@gmail.com)
-- 📱 WhatsApp: [+251 92 231 3333](https://wa.me/+251922313333)
-
----
-
-## 📄 License
-
-This project is personal work — the code is open for reference, but the content (text, images, CV, branding) is © Alazar Damena and not licensed for reuse.
-
-If you'd like a template to build your own portfolio from, feel free to use the structure as inspiration, but replace all content with your own.
+ - Building a persistent dark/light theme system with React Context
+- Creating reusable and maintainable React components
+- Implementing animations with Framer Motion without unnecessary layout shifts
+- Building responsive interfaces with Tailwind CSS
+- Connecting a frontend form to a serverless API
+- Integrating transactional email with Resend
+- Managing environment variables and sensitive credentials
+- Optimizing a Vite application for production
+- Improving accessibility and keyboard navigation
+- Structuring a production-ready personal project
 
 ---
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/Alazar-da">Alazar Damena</a>
-</p>
+ ## 🌐 Links
+
+ - **Portfolio:** alazarda-portfolio.vercel.app
+- **LinkedIn:** linkedin.com/in/alazar-da
+- **GitHub:** github.com/Alazar-da
+- **Email:** [alazar.damena01@gmail.com](<mailto:alazar.damena01@gmail.com>)
+- **WhatsApp:** +251 92 231 3333
+
+---
+
+ ## 👤 About Me
+
+ **Alazar Damena Girma**\
+ Full Stack Software Engineer\
+ Addis Ababa, Ethiopia
+
+ I build modern, responsive, and scalable web applications with a focus on clean architecture, user experience, and maintainable code.
+
+---
+
+ ## 📄 License
+
+ This project is personal work.
+
+ The source code is available for reference and learning, but the **content, images, CV, branding, and personal information are not licensed for reuse**.
+
+ Feel free to use the project's structure and implementation ideas as inspiration for your own portfolio.
+
+---
+
+ \<p align="center"\> Built with ❤️ by \<a href="https://github.com/Alazar-da"\>Alazar Damena\</a\> \</p\> \`\`\` ### One change I'd strongly recommend
+
+ For a **portfolio GitHub repo**, add a real screenshot section once you have the images:
+
 ```
-
----
-
-## What each section does for you
-
-| Section | Why it matters |
-|---|---|
-| **Badges / Live link** | Recruiters click the first link they see — make it obvious |
-| **Features** | Shows you think in terms of product, not just code |
-| **Tech Stack** | Instant ATS keyword match for "React TypeScript Tailwind Vercel" |
-| **Project Structure** | Tells a reviewer where to look in 10 seconds |
-| **Getting Started** | Shows you understand onboarding — a real engineering signal |
-| **Contact Form Setup** | Documents env vars without leaking keys — professional |
-| **Design System** | Proves intentionality behind the palette |
-| **Author** | Direct links to your LinkedIn, GitHub, WhatsApp, and email |
-| **License** | Protects your content while allowing reference |
-
----
-
-## Optional extras you can add later
-
-### Badges at the top
-
-If you want visual flair right under the title:
-
-```markdown
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-06B6D4?logo=tailwindcss&logoColor=white)
-![License](https://img.shields.io/badge/License-Personal-lightgrey)
-```
-
-### A screenshot section
-
-After the Features list:
-
-```markdown
 ## 📸 Screenshots
 
 | Home | Skills | Portfolio |
 |---|---|---|
 | ![Home](./.github/screenshots/home.png) | ![Skills](./.github/screenshots/skills.png) | ![Portfolio](./.github/screenshots/portfolio.png) |
-
-> Create a `.github/screenshots/` folder and drop in captures. Delete this section if you'd rather not maintain images.
 ```
-
-### A "What I learned" section
-
-Great for personal projects — shows reflection:
-
-```markdown
-## 🧠 What I Learned
-
-- Building a theme system with React Context that survives page reloads
-- Animating with Framer Motion without causing layout jank
-- Wiring a serverless contact form with email delivery and error handling
-- Managing a Tailwind v4 → v3 downgrade when the tooling didn't fit
-- Recovering from a leaked secret in git history
-```
-
-Want me to also generate the `.env.example` file contents and the `.github/screenshots/` folder structure so the README's optional sections work out of the box?
