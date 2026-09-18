@@ -128,7 +128,7 @@ export default function Contact() {
       body.append('message', formData.message);
 
       const response = await fetch(
-        'https://my-portfolio-server-gcd6.onrender.com/message/send',
+        '/api/send',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
