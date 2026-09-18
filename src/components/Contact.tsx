@@ -348,14 +348,13 @@ export default function Contact() {
                   id="budget"
                   name="budget"
                   type="number"
-                  required
                   value={formData.budget}
                   onChange={handleChange}
                   placeholder="Budget"
                   className={inputBaseClass}
                 />
                 <label htmlFor="budget" className={labelBaseClass}>
-                  Budget *
+                  Budget
                 </label>
               </div>
 
