@@ -19,7 +19,7 @@ const projects: Project[] = [
     description:
       'Delivered a Dubai-based advisory firm’s corporate site end-to-end in one month — Next.js App Router with SSR, image optimization for SEO, contact form with email integration, and a responsive mobile drawer.',
     image: './portfolio1.png',
-    link: '#', // add live URL when ready
+    link: 'https://amanahcorporateadvisory.com/', // add live URL when ready
     tags: ['Next.js', 'SSR', 'SEO'],
     year: '2024',
   },
