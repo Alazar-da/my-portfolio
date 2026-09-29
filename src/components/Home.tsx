@@ -69,7 +69,7 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-secondary-500 opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary-500" />
               </span>
-              Open to Remote &amp; Relocation
+              Open to Remote Opportunities
             </motion.div>
 
             {/* Headline */}

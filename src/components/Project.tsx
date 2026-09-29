@@ -15,7 +15,7 @@ const services: Service[] = [
     header: 'Production Frontend',
     subHeader:
       'React and Next.js App Router interfaces built for real users — SSR, mobile-first layouts, data fetching with TanStack React Query, and reusable component architecture that survives feature additions.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'TanStack Query'],
+    tags: ['React', 'Next.js', 'React Native', 'TypeScript', 'Tailwind CSS', 'TanStack Query'],
   },
   {
     icon: FiServer,

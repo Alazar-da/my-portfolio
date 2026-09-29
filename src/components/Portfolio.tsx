@@ -29,7 +29,7 @@ const projects: Project[] = [
       'Co-founded and lead engineering across multiple concurrent client contracts in e-commerce, fintech, and real estate. Frontend-first, but covering backend integration, authentication, application architecture, and production deployment.',
     image: './mina.jpg',
     link: 'https://minatechnologies.com/',
-    tags: [ 'Next.js', 'TypeScript', 'MongoDB', 'REST APIs', 'RBAC', 'Vercel'],
+    tags: [ 'Next.js', 'TypeScript', 'React Native', 'MongoDB', 'REST APIs', 'RBAC', 'Vercel'],
     year: '2024 — Present',
     featured: true,
     badge: 'Featured',
