@@ -8,7 +8,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: '3+', label: 'Years Experience' },
+  { value: '4+', label: 'Years Experience' },
   { value: '15+', label: 'Projects Completed' },
   { value: '10+', label: 'Happy Clients' },
 ];
