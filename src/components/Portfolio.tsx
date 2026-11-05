@@ -30,7 +30,7 @@ const projects: Project[] = [
     image: './mina.jpg',
     link: 'https://minatechnologies.com/',
     tags: [ 'Next.js', 'TypeScript', 'React Native', 'MongoDB', 'REST APIs', 'RBAC', 'Vercel'],
-    year: '2024 — Present',
+    year: '2022 — Present',
     featured: true,
     badge: 'Featured',
   },
@@ -65,6 +65,22 @@ const projects: Project[] = [
     image: './portfolio2.png',
     tags: ['Next.js', 'TypeScript', 'Supabase', 'Vercel'],
     year: '2026',
+  },
+  {
+    title: 'Frontend Developer · Mina Technologies',
+    company: 'Mina Property Management ERP',
+    description:
+      'ERP modules for units, tenants, contracts, requests, payments, and reporting, built with reusable tables, filters, detail views, multi-step forms, and typed query and mutation hooks.',
+    tags: ['Next.js', 'Tailwind CSS', 'React Query', 'REST APIs', 'RBAC'],
+    year: '2025 — Present',
+  },
+  {
+    title: 'Frontend-Focused Software Engineer',
+    company: 'Ethio HomeDepot',
+    description:
+      'Built 20+ mobile-first screens for a multi-vendor e-commerce product across discovery, listings, cart, and checkout, with role-based experiences for customers, suppliers, drivers, and super admins.',
+    tags: ['Next.js', 'React Native', 'Tailwind CSS', 'React Query'],
+    year: '2025 — Present',
   },
   {
     title: 'Full Stack Web Developer Intern',

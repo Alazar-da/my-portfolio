@@ -184,8 +184,9 @@ export default function About() {
               <span className="text-primary-700 dark:text-primary-300">TypeScript</span>, and{' '}
               <span className="text-primary-700 dark:text-primary-300">PostgreSQL</span>, with
               additional experience in authentication, RBAC, dashboards, and
-              production deployment. Currently expanding backend and cloud
-              expertise across Node.js, NestJS, Prisma, Docker, CI/CD, and AWS.
+              production deployment. I also work with Node.js, Express,
+              Supabase, authentication, Docker, GitHub Actions, and Vercel to
+              carry products from an idea through production.
             </motion.p>
 
             {/* Highlight chips */}

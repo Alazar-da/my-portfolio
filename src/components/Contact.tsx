@@ -38,7 +38,7 @@ const contactCards: ContactCard[] = [
     icon: FiMapPin,
     label: 'Location',
     value: 'Addis Ababa, Ethiopia',
-    href: '#',
+    href: 'https://maps.google.com/?q=Addis+Ababa,+Ethiopia',
   },
   {
     icon: FiMail,

@@ -101,8 +101,8 @@ export default function Hero() {
               className="text-sm md:text-base leading-relaxed max-w-xl
                          text-third-600 dark:text-third-300"
             >
-              Full Stack Software Engineer with hands-on experience building
-              and deploying production web applications across{' '}
+              Full Stack Software Engineer shipping production web applications
+              and client projects since 2022 across{' '}
               <span className="text-secondary-700 dark:text-secondary-400 font-medium">e-commerce</span>,{' '}
               <span className="text-secondary-700 dark:text-secondary-400 font-medium">fintech</span>,{' '}
               <span className="text-secondary-700 dark:text-secondary-400 font-medium">real estate</span>, and
